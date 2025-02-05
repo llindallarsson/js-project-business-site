@@ -1,0 +1,68 @@
+body {
+  display: block;
+  margin: 8px;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+/* styling för navigationbar */
+.nav-bar {
+  background: red;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links a {
+  margin: 16px;
+}
+
+/* styling for the options of pottery */
+.pottery-options {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* justify-content: center;
+  justify-items: stretch; */
+  gap: 12px;
+}
+
+.pottery-options article {
+  border: 2px solid green;
+  background: blue;
+}
+
+.pottery-options img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/* styling for the upcoming classes */
+.upcoming-classes {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr); */
+
+}
+
+.classes {
+  display: flex;
+  flex-direction: row;
+}
+
+.classes img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.upcoming-classes article {
+  background: pink;
+  border: 4px solid blue;
+  display: flex;
+}
