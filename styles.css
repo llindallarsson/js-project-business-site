@@ -1,5 +1,5 @@
 body {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   min-height: 100%;
 }
@@ -13,6 +13,7 @@ button {
   cursor: pointer;
 }
 
+/* Styling for hero-container */
 .hero-container {
   position: relative;
   height: 100vh;
@@ -25,10 +26,10 @@ button {
 }
 
 .hero-nav {
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 10;
   background: white;
   padding: 1rem;
@@ -37,7 +38,7 @@ button {
   align-items: center;
 }
 
-.her .nav-logo img {
+.nav-logo img {
   max-height: 50%;
 }
 
@@ -51,7 +52,7 @@ button {
   z-index: -1;
 }
 
-.hero-heading {
+/* .hero-heading {
   position: relative;
   z-index: 1;
   color: #000;
@@ -59,8 +60,7 @@ button {
   font-size: 16px;
   padding: 1rem;
   margin-top: 10rem;
-  text-align: center;
-}
+} */
 
 .location-openHours {
   position: absolute;
@@ -69,17 +69,23 @@ button {
   z-index: 1;
   color: black;
   background: white;
-  padding: 1rem;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+}
+
+.location-openHours a {
+  margin-left: 1rem;
+}
+
+.openHours {
+  margin-right: 1rem;
 }
 
 
 /* styling for section with exhibitions */
 .SymbolsModernMyth {
+  position: relative;
   height: 500px;
   width: 100%;
   display: flex;
@@ -106,29 +112,101 @@ button {
   padding: 1rem;
 }
 
-/* styling for section about us */
-.about {
-  background: blue;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 3fr;
-  padding: 16px;
+/* Styling for section with passes */
+.passes {
+  width: auto;
+  margin: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  overflow: hidden;
 }
 
-.about img {
-  height: 400px;
+.annual-pass {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.annual-pass img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
   width: 100%;
   object-fit: cover;
-  margin-top: 16px;
+  overflow: hidden;
+}
+
+.annual-pass div {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  height: auto;
+  background: white;
+  font-size: 16px;
+  padding-right: 1rem;
+}
+
+.tours-dropIn {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tours-dropIn img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.tours-dropIn div {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  height: auto;
+  background: white;
+  font-size: 16px;
+  padding-right: 1rem;
+}
+
+/* Stylig for exhibition 2 */
+.clayThroughAges {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.clayThroughAges img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 /* Styling for the footer */
 footer {
-  background: purple;
-  height: 500px;
+  background: black;
+  color: white;
+  height: auto;
+  padding: 40px 16px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 /* Styling for conatct form */
@@ -167,146 +245,4 @@ form button {
   background: #7B3535;
   border-radius: 5px;
   color: white;
-}
-
-@media (min-width: 668px) and (max-width:1024px) {
-
-  .classes {
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 3fr;
-    gap: 12px;
-
-  }
-
-  .classes article {
-    margin-top: 0;
-    height: 300px;
-    width: 100%;
-    position: relative;
-  }
-
-  .class-1 {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
-
-  .class-2 {
-    grid-column: 2 / 2;
-    grid-row: 2 / 3;
-  }
-
-  .class-3 {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-  }
-
-  .class-4 {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-  }
-
-  .contact-form {
-    margin: 24px;
-  }
-
-}
-
-@media (min-width: 1025px) {
-
-  /* .classes {
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 2fr;
-    gap: 12px;
-  }
-
-  .classes article {
-    margin-top: 0;
-    height: 500px;
-    width: 100%;
-    position: relative;
-  }
-
-  .class-1 {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
-
-  .class-2 {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-  }
-
-  .class-3 {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-  }
-
-  .class-4 {
-    grid-column: 4 / 5;
-    grid-row: 2 / 3;
-  } */
-  .classes {
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 3fr;
-    gap: 12px;
-
-  }
-
-  .classes article {
-    margin-top: 0;
-    height: 300px;
-    width: 100%;
-    position: relative;
-  }
-
-  .class-1 {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
-
-  .class-2 {
-    grid-column: 2 / 2;
-    grid-row: 2 / 3;
-  }
-
-  .class-3 {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-  }
-
-  .class-4 {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-  }
-
-  .contact-form {
-    margin: 24px;
-  }
-
-  .about {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 2fr;
-    gap: 16px;
-  }
-
-  .about h2 {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-
-  .about img {
-    height: 600px;
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
-
-  .about div {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-  }
-
-  .contact-form {
-    margin: 24px;
-  }
 }
