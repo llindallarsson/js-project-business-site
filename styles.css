@@ -9,7 +9,6 @@ button {
   background-color: #fff;
   color: #000;
   border: 1px solid white;
-  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -206,43 +205,72 @@ footer {
   padding: 40px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+
 }
 
-/* Styling for conatct form */
-.contact-form {
-  margin: 24px 16px;
-}
-
-form {
+footer nav {
   margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-}
-
-.form-input {
+  margin-bottom: 24px;
+  color: white;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.form-input input {
-  height: 30px;
-}
-
-#message {
-  height: 100px;
+/* Styling for conatct form */
+footer form {
+  margin-top: 24px;
+  margin-bottom: 24px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.form-input ::placeholder {
-  padding-left: 8px;
+.form-input {
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* input {
+  border: none;
+  outline: none;
+} */
+
+input[type=email] {
+  height: 24px;
+  width: auto;
+  padding: 4px;
+}
+
+input[type="email"]:focus {
+  border: 2px solid #800080;
+  /* Lila kant */
+  background-color: #f8f0ff;
+  /* Ljus bakgrund när i fokus */
+  box-shadow: 0 0 12px rgba(128, 0, 128, 0.6);
+  /* Lila glöd */
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.form-checkbox label {
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 form button {
-  background: #7B3535;
-  border-radius: 5px;
-  color: white;
+  margin-top: 16px;
+  background: #white;
+  color: black;
 }

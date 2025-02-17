@@ -133,17 +133,38 @@
       <p>Where you can find us: <br> Adress i Stockholm, 123 45 STOCKHOLM</p>
       <p>Our opening hours: <br> mon - fri: 8.00 – 18.00</p>
     </div>
-    <div class="form-input">
-      <label for="email">Subscribe to our newsletter
-      </label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="example@email.com"
-        required
-      />
-    </div>
+    <form
+      action="http://httpbin.org/anything"
+      method="POST"
+    >
+      <div class="form-input">
+        <label for="email">Subscribe to our newsletter
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@email.com"
+          required
+        >
+      </div>
+      <div class="form-checkbox">
+
+        <input
+          type="checkbox"
+          id="agree"
+          name="agree"
+          value="agreeOK"
+          required
+        >
+        <label for="agree"> You agree to our friendly <a
+            href=""
+            #"
+          >privacy policy.</a></label><br>
+      </div>
+
+      <button type="submit">Subscribe</button>
+    </form>
 
 
   </footer>
