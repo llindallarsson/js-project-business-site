@@ -2,14 +2,44 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  font-family: "Roboto Condensed";
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 4px;
+}
+
+.exhibition-titel {
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 16px;
+  margin: 4px;
+}
+
+.p-type {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid white;
+  padding: 4px;
+  margin: 4px;
+  background-color: #7B3535;
+  color: white;
+  border: none;
   cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 /* Styling for hero-container */
@@ -51,16 +81,6 @@ button {
   z-index: -1;
 }
 
-/* .hero-heading {
-  position: relative;
-  z-index: 1;
-  color: #000;
-  background: #7B3535;
-  font-size: 16px;
-  padding: 1rem;
-  margin-top: 10rem;
-} */
-
 .location-openHours {
   position: absolute;
   bottom: 0;
@@ -71,6 +91,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 16px
 }
 
 .location-openHours a {
@@ -105,10 +126,9 @@ button {
 .exhibition-info {
   position: relative;
   z-index: 1;
-  color: #000;
-  background: #7B3535;
-  font-size: 16px;
-  padding: 1rem;
+  background: white;
+  width: 70%;
+  padding: 8px;
 }
 
 /* Styling for section with passes */
@@ -143,11 +163,12 @@ button {
 .annual-pass div {
   position: relative;
   z-index: 1;
-  width: 80%;
+  width: auto;
   height: auto;
   background: white;
   font-size: 16px;
   padding-right: 1rem;
+  margin-right: 2rem;
 }
 
 .tours-dropIn {
@@ -170,11 +191,12 @@ button {
 .tours-dropIn div {
   position: relative;
   z-index: 1;
-  width: 80%;
+  width: auto;
   height: auto;
   background: white;
   font-size: 16px;
   padding-right: 1rem;
+  margin-right: 2rem;
 }
 
 /* Stylig for exhibition 2 */
@@ -218,7 +240,22 @@ footer nav {
   gap: 8px;
 }
 
-/* Styling for conatct form */
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+nav a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.find-us p {
+  margin: 16px 0;
+}
+
+/* Styling for newsletter form */
 footer form {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -235,10 +272,10 @@ footer form {
   gap: 8px;
 }
 
-/* input {
+input {
   border: none;
-  outline: none;
-} */
+  color: white;
+}
 
 input[type=email] {
   height: 24px;
@@ -246,10 +283,9 @@ input[type=email] {
   padding: 4px;
 }
 
-input[type="email"]:focus {
-  border: 2px solid #800080;
-  /* Lila kant */
-  background-color: #f8f0ff;
+input:focus {
+  border: 2px solid #7B3535;
+  background-color: #7B3535;
   /* Ljus bakgrund när i fokus */
   box-shadow: 0 0 12px rgba(128, 0, 128, 0.6);
   /* Lila glöd */
@@ -271,6 +307,19 @@ input[type="email"]:focus {
 
 form button {
   margin-top: 16px;
-  background: #white;
-  color: black;
+}
+
+@media (min-width: 670px) (max-width: 1024px) {
+
+  .passes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
