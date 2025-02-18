@@ -104,18 +104,19 @@ button {
 
 
 /* styling for section with exhibitions */
-.SymbolsModernMyth {
+.SymbolsModernMyth,
+.clayThroughAges {
   position: relative;
   height: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 
-.SymbolsModernMyth img {
+.exhibition img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -127,8 +128,8 @@ button {
   position: relative;
   z-index: 1;
   background: white;
-  width: 70%;
   padding: 8px;
+  margin-left: 24px;
 }
 
 /* Styling for section with passes */
@@ -143,34 +144,7 @@ button {
   overflow: hidden;
 }
 
-.annual-pass {
-  position: relative;
-  height: 300px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.annual-pass img {
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-}
-
-.annual-pass div {
-  position: relative;
-  z-index: 1;
-  width: auto;
-  height: auto;
-  background: white;
-  font-size: 16px;
-  padding-right: 1rem;
-  margin-right: 2rem;
-}
-
+.annual-pass,
 .tours-dropIn {
   position: relative;
   height: 300px;
@@ -179,7 +153,7 @@ button {
   align-items: center;
 }
 
-.tours-dropIn img {
+.passes img {
   position: absolute;
   z-index: -1;
   height: 100%;
@@ -188,43 +162,23 @@ button {
   overflow: hidden;
 }
 
-.tours-dropIn div {
+.passes-info {
   position: relative;
   z-index: 1;
   width: auto;
   height: auto;
   background: white;
-  font-size: 16px;
   padding-right: 1rem;
   margin-right: 2rem;
 }
 
-/* Stylig for exhibition 2 */
-.clayThroughAges {
-  position: relative;
-  height: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.clayThroughAges img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
 
 /* Styling for the footer */
 footer {
   background: black;
   color: white;
   height: auto;
-  padding: 40px 16px;
+  padding: 40px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -243,6 +197,10 @@ footer nav {
 footer a {
   color: white;
   text-decoration: underline;
+}
+
+footer img {
+  max-width: 300px;
 }
 
 nav a {
@@ -267,6 +225,7 @@ footer form {
 .form-input {
   margin-bottom: 12px;
   width: 100%;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -309,17 +268,69 @@ form button {
   margin-top: 16px;
 }
 
-@media (min-width: 670px) (max-width: 1024px) {
+@media (min-width: 670px) and (max-width: 1024px) {
+
+  h3 {
+    font-size: 32px;
+  }
 
   .passes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 40px;
+  }
+
+  footer {
+    padding: 60px 60px;
+  }
+
+  .form-input {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 1025px) {
+
+  h3 {
+    font-size: 32px;
+  }
+
+  .passes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  footer {
+    padding: 60px 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 20% 40% 40%;
+    gap: 16px;
   }
 
 
-  img {
-    width: 100%;
-    height: auto;
+  footer nav {
+    grid-column: 1;
+    /* Länkarna i den första kolumnen */
+    grid-row: 2;
+    /* Länkarna i första raden */
+    margin-top: 16px;
   }
+
+  .find-us {
+    grid-column: 2;
+    /* Länkarna i den första kolumnen */
+    grid-row: 2;
+    /* Länkarna i första raden */
+  }
+
+  footer form {
+    margin-top: 0;
+    grid-column: 2;
+    /* Länkarna i den första kolumnen */
+    grid-row: 3;
+    /* Länkarna i första raden */
+  }
+
 }
