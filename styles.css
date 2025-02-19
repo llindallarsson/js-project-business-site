@@ -1,8 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
   font-family: "Roboto Condensed";
+}
+
+h2 {
+  font-size: 36px;
+  margin: 0 24px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 h3 {
@@ -59,16 +68,59 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
-  background: white;
   padding: 1rem;
+  z-index: 2;
+  background: white;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
-.nav-logo img {
-  max-height: 50%;
+#hamburger-menu {
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 0;
+}
+
+#nav-menu.active {
+  display: flex;
+  align-items: center;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.menu-item {
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .hero-video {
@@ -91,17 +143,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px
+  padding: 16px;
 }
-
-.location-openHours a {
-  margin-left: 1rem;
-}
-
-.openHours {
-  margin-right: 1rem;
-}
-
 
 /* styling for section with exhibitions */
 .SymbolsModernMyth,
@@ -130,6 +173,7 @@ button {
   background: white;
   padding: 8px;
   margin-left: 24px;
+  margin-right: 24px;
 }
 
 /* Styling for section with passes */
@@ -178,7 +222,7 @@ footer {
   background: black;
   color: white;
   height: auto;
-  padding: 40px 40px;
+  padding: 40px 24px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -268,11 +312,42 @@ form button {
   margin-top: 16px;
 }
 
+/* Styling for media-requerie */
 @media (min-width: 670px) and (max-width: 1024px) {
+
+  h2 {
+    font-size: 40px;
+  }
 
   h3 {
     font-size: 32px;
   }
+
+  #hamburger-menu {
+    display: none;
+  }
+
+  #nav-menu {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .menu-item {
+    font-size: 16px;
+    color: black;
+  }
+
 
   .passes {
     display: grid;
@@ -291,8 +366,37 @@ form button {
 
 @media (min-width: 1025px) {
 
+  h2 {
+    font-size: 48px;
+  }
+
   h3 {
     font-size: 32px;
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+
+  #nav-menu {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .menu-item {
+    font-size: 16px;
+    color: black;
   }
 
   .passes {
@@ -307,6 +411,10 @@ form button {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 20% 40% 40%;
     gap: 16px;
+  }
+
+  footer .nav-logo {
+    align-self: center;
   }
 
 
