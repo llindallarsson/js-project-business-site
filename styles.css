@@ -76,6 +76,7 @@ button {
   align-items: center;
 }
 
+
 #hamburger-menu {
   position: relative;
   cursor: pointer;
@@ -85,6 +86,46 @@ button {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+#hamburger-menu .bar {
+  transition: all 0.3s ease;
+}
+
+#hamburger-menu.expanded .bar:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 7px;
+}
+
+#hamburger-menu.expanded .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-menu.expanded .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -7px;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 #nav-menu {
@@ -103,7 +144,12 @@ button {
 
 #nav-menu.active {
   display: flex;
-  align-items: center;
+  animation: slideIn 0.5s ease-out forwards;
+  transform: translateX(100%);
+}
+
+#nav-menu:not(.active) {
+  animation: slideOut 0.5s ease-out forwards;
 }
 
 .menu-list {
@@ -229,28 +275,22 @@ footer {
 
 }
 
-footer nav {
-  margin-top: 24px;
-  margin-bottom: 24px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-footer a {
-  color: white;
-  text-decoration: underline;
-}
 
 footer img {
   max-width: 300px;
 }
 
-nav a {
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+nav li {
   color: white;
   text-transform: uppercase;
-  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 16px;
 }
 
 .find-us p {
@@ -281,9 +321,8 @@ input {
 }
 
 input[type=email] {
-  height: 24px;
+  height: 30px;
   width: auto;
-  padding: 4px;
 }
 
 input:focus {
@@ -291,7 +330,7 @@ input:focus {
   background-color: #7B3535;
   /* Ljus bakgrund när i fokus */
   box-shadow: 0 0 12px rgba(128, 0, 128, 0.6);
-  /* Lila glöd */
+
 }
 
 .form-checkbox {
@@ -301,6 +340,7 @@ input:focus {
 
 .form-checkbox input[type="checkbox"] {
   margin-right: 8px;
+  margin-left: 0;
 }
 
 .form-checkbox label {
@@ -312,7 +352,7 @@ form button {
   margin-top: 16px;
 }
 
-/* Styling for media-requerie */
+/* Styling for media queries */
 @media (min-width: 670px) and (max-width: 1024px) {
 
   h2 {
@@ -334,7 +374,14 @@ form button {
     height: auto;
     background: none;
     padding: 0;
+    transform: none;
+    animation: none;
   }
+
+  #nav-menu:not(.active) {
+    animation: none;
+  }
+
 
   .menu-list {
     display: flex;
@@ -387,6 +434,10 @@ form button {
     padding: 0;
   }
 
+  #nav-menu:not(.active) {
+    animation: none;
+  }
+
   .menu-list {
     display: flex;
     flex-direction: row;
@@ -420,25 +471,23 @@ form button {
 
   footer nav {
     grid-column: 1;
-    /* Länkarna i den första kolumnen */
     grid-row: 2;
-    /* Länkarna i första raden */
     margin-top: 16px;
+  }
+
+  nav ul {
+    margin-top: 0rem;
   }
 
   .find-us {
     grid-column: 2;
-    /* Länkarna i den första kolumnen */
     grid-row: 2;
-    /* Länkarna i första raden */
   }
 
   footer form {
     margin-top: 0;
     grid-column: 2;
-    /* Länkarna i den första kolumnen */
     grid-row: 3;
-    /* Länkarna i första raden */
   }
 
 }
