@@ -18,10 +18,17 @@ h3 {
   font-size: 24px;
   font-weight: 500;
   margin: 4px;
+  color: black;
+}
+
+h4 {
+  font-size: 18px;
+  margin: 12px 0;
 }
 
 .exhibition-titel {
   text-transform: uppercase;
+  color: black;
 }
 
 p {
@@ -33,22 +40,42 @@ p {
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
+  color: black;
 }
 
 a {
-  color: black;
   text-decoration: none;
 }
+
+a:visited:hover {
+  text-decoration: none;
+  color: #7B3535 !important;
+}
+
+#location a {
+  color: black;
+}
+
+.find-us a {
+  color: white;
+}
+
 
 button {
   padding: 4px;
   margin: 4px;
   background-color: #7B3535;
   color: white;
-  border: none;
+  border: 2px solid #7B3535;
   cursor: pointer;
   text-transform: uppercase;
   font-size: 14px;
+}
+
+button:hover {
+  background: white;
+  color: #7B3535;
+  border: 2px solid #7B3535;
 }
 
 /* Styling for hero-container */
@@ -167,6 +194,12 @@ button {
   text-decoration: none;
   font-size: 24px;
   cursor: pointer;
+  padding: 0;
+}
+
+.menu-item:hover {
+  background: #7B3535;
+  color: white;
 }
 
 .hero-video {
@@ -348,6 +381,12 @@ input:focus {
   max-width: 100%;
 }
 
+#privacy-policy {
+  color: white;
+  text-decoration: underline;
+
+}
+
 form button {
   margin-top: 16px;
 }
@@ -460,7 +499,7 @@ form button {
     padding: 60px 60px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 20% 40% 40%;
+    grid-template-rows: 10% 45% 45%;
     gap: 16px;
   }
 
@@ -475,19 +514,24 @@ form button {
     margin-top: 16px;
   }
 
+  footer form {
+    margin-top: 0;
+    grid-column: 1;
+    grid-row: 3;
+  }
+
   nav ul {
     margin-top: 0rem;
   }
 
   .find-us {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 3;
   }
 
-  footer form {
-    margin-top: 0;
+  .openHours {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 2;
   }
 
 }
