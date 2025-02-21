@@ -109,7 +109,7 @@ button:hover {
 }
 
 
-#hamburger-menu {
+#ham-menu {
   position: relative;
   cursor: pointer;
   width: 30px;
@@ -120,21 +120,22 @@ button:hover {
   align-items: center;
 }
 
-#hamburger-menu .bar {
+
+#ham-menu .bar {
   transition: all 0.3s ease;
 }
 
-#hamburger-menu.expanded .bar:nth-child(1) {
+#ham-menu.expanded .bar:nth-child(1) {
   transform: rotate(45deg);
   position: relative;
   top: 7px;
 }
 
-#hamburger-menu.expanded .bar:nth-child(2) {
+#ham-menu.expanded .bar:nth-child(2) {
   opacity: 0;
 }
 
-#hamburger-menu.expanded .bar:nth-child(3) {
+#ham-menu.expanded .bar:nth-child(3) {
   transform: rotate(-45deg);
   position: relative;
   top: -7px;
@@ -172,6 +173,7 @@ button:hover {
   align-items: center;
   flex-direction: column;
   padding: 3rem 0;
+
 }
 
 #nav-menu.active {
@@ -231,8 +233,7 @@ button:hover {
 }
 
 /* styling for section with exhibitions */
-.SymbolsModernMyth,
-.clayThroughAges {
+.exhibition {
   position: relative;
   height: 500px;
   width: 100%;
@@ -408,7 +409,7 @@ form button {
     font-size: 32px;
   }
 
-  #hamburger-menu {
+  #ham-menu {
     display: none;
   }
 
@@ -466,7 +467,7 @@ form button {
     font-size: 32px;
   }
 
-  #hamburger-menu {
+  #ham-menu {
     display: none;
   }
 
@@ -483,6 +484,7 @@ form button {
     animation: none;
   }
 
+  /* denna id tas bort */
   .menu-list {
     display: flex;
     flex-direction: row;

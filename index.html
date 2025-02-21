@@ -25,7 +25,7 @@
 <body>
 
   <header class="hero-container">
-    <nav class="hero-nav">
+    <section class="hero-nav">
       <div class="nav-logo">
         <a href="index.html">
           <img
@@ -34,67 +34,60 @@
           >
         </a>
       </div>
+
       <div
-        class="hamburger"
-        id="hamburger-menu"
+        class="ham-menu"
+        id="ham-menu"
       >
-        <svg
-          viewBox="0 0 100 80"
-          width="30"
-          height="30"
-        >
-          <rect
-            class="bar"
-            width="100"
-            height="15"
-          ></rect>
-          <rect
-            class="bar"
-            y="30"
-            width="100"
-            height="15"
-          ></rect>
-          <rect
-            class="bar"
-            y="60"
-            width="100"
-            height="15"
-          ></rect>
-        </svg>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-      <div id="nav-menu">
+      <nav
+        class="nav-menu"
+        id="nav-menu"
+      >
         <ul class="menu-list">
-          <a href="#">
-            <li class="menu-item">Home</li>
-          </a>
-          <a href="">
-            <li class="menu-item">About</li>
-          </a>
-          <a href="">
-            <li class="menu-item">Exhibition</li>
-          </a>
-          <a href="">
-            <li class="menu-item">Contact</li>
-          </a>
+          <li><a
+              href="#"
+              class="menu-item"
+              id="home-link"
+            >Home</a></li>
+          <li><a
+              href=""
+              class="menu-item"
+              id="about-link"
+            >About</a></li>
+          <li><a
+              href=""
+              class="menu-item"
+              id="services-link"
+            >Services</a></li>
+          <li><a
+              href=""
+              class="menu-item"
+              id="contact-link"
+            >Contact</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </section>
+    <section class="hero-welcome"> <!-- HITTA PÅ ETT BÄTTRE NAMN -->
+      <video
+        class="hero-video"
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source
+          src="headervideo.mp4"
+          type="video/mp4"
+        >Your browser dosn't support the video
+      </video>
 
-    <video
-      autoplay
-      loop
-      muted
-      playsinline
-      class="hero-video"
-    >
-      <source
-        src="headervideo.mp4"
-        type="video/mp4"
-      >Your browser dosn't support the video
-    </video>
-
-    <h2 class="hero-slogan">Every piece tells a tale of the world we shape.</h2>
+      <h2 class="hero-slogan">Every piece tells a tale of the world we shape.</h2>
+    </section>
 
     <section class="location-openHours">
       <div id="location">
@@ -107,6 +100,7 @@
           target="_blank"
         >Stockholm</a>
       </div>
+
       <a
         href="#openHours-footer"
         id="openHours"
@@ -115,11 +109,14 @@
   </header>
 
   <main>
-    <section class="exhibition">
-      <article class="SymbolsModernMyth">
+    <section class="exhibition-container">
+      <article
+        class="exhibition"
+        id="SymbolsModernMyth"
+      >
         <img
           src="pictures/exhibition-1.jpg"
-          alt="Picture of..."
+          alt="Skulptur av ett människohuvud där en levande orm slingrar sig kring dess konturer, ett kraftfullt symboliskt uttryck i Isabelle Duvalls utställning 'Symbols of the Modern Myth'."
         >
         <div class="exhibition-info">
           <p class="p-type">Exhibition</p>
@@ -130,38 +127,49 @@
         </div>
       </article>
     </section>
-    <section class="passes">
-      <div class="annual-pass">
+
+    <section class="passes-container">
+      <article
+        class="passes"
+        id="annual-pass"
+      >
         <img
           src="pictures/pexels-prismattco-2372982.jpg"
           alt=""
         >
         <div class="passes-info">
-          <a href="#">
+          <a href="">
             <p class="p-type">Visit us whenever you like</p>
             <h3>Get the Annual Pass!</h3>
           </a>
         </div>
-      </div>
-      <div class="tours-dropIn">
+      </article>
+
+      <article
+        class="passes"
+        id="tours-dropIn"
+      >
         <img
           src="pictures/annual-pass.jpg"
           alt=""
         >
         <div class="passes-info">
-          <a href="#">
+          <a href="">
             <p class="p-type">Guided tours & drop-in</p>
             <h3>Family Sunday: Experience art together!</h3>
           </a>
         </div>
-      </div>
+      </article>
     </section>
 
-    <section class="exhibition">
-      <article class="clayThroughAges">
+    <section class="exhibition-container">
+      <article
+        class="exhibition"
+        id="clayThroughAges"
+      >
         <img
           src="pictures/pexels-tima-miroshnichenko-6713704.jpg"
-          alt="Picture of..."
+          alt="En samling av människorhuvuden i lera, skapade med stor detaljrikedom, som utforskar tidens gång och människans uttryck i Elias Røkkes utställning 'Clay Through the Ages'."
         >
         <div class="exhibition-info">
           <p class="p-type">Exhibition</p>
@@ -171,9 +179,7 @@
           <button>The collection</button>
         </div>
       </article>
-
     </section>
-
   </main>
 
   <footer>
@@ -186,20 +192,28 @@
       </a>
     </div>
 
-    <nav>
-      <ul>
-        <a href="#">
-          <li>Home</li>
-        </a>
-        <a href="">
-          <li>About</li>
-        </a>
-        <a href="">
-          <li>Exhibition</li>
-        </a>
-        <a href="">
-          <li>Contact</li>
-        </a>
+    <nav class="footer-nav">
+      <ul class="menu-list">
+        <li><a
+            href="#"
+            class="menu-item"
+            id="home-link"
+          >Home</a></li>
+        <li><a
+            href=""
+            class="menu-item"
+            id="about-link"
+          >About</a></li>
+        <li><a
+            href=""
+            class="menu-item"
+            id="services-link"
+          >Services</a></li>
+        <li><a
+            href=""
+            class="menu-item"
+            id="contact-link"
+          >Contact</a></li>
       </ul>
     </nav>
 
@@ -212,6 +226,7 @@
           >Åsögatan 122, 16 24 Stockholm</a></p>
       </div>
     </section>
+
     <section
       class="openHours"
       id="openHours-footer"
@@ -225,6 +240,7 @@
       <p>Saturday: 10.00–15.00</p>
       <p>Sunday: 10.00–15.00</p>
     </section>
+
     <form
       action="http://httpbin.org/anything"
       method="POST"
@@ -240,8 +256,8 @@
           required
         >
       </div>
-      <div class="form-checkbox">
 
+      <div class="form-checkbox">
         <input
           type="checkbox"
           id="agree"
@@ -258,8 +274,8 @@
       <button type="submit">Subscribe</button>
     </form>
   </footer>
-
   <script src="./script.js"> </script>
+
 </body>
 
 </html>
