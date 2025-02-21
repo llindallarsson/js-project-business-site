@@ -45,11 +45,16 @@ p {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
-a:visited:hover {
-  text-decoration: none;
+a:hover {
+  text-decoration: underline;
   color: #7B3535 !important;
+}
+
+a:visited {
+  text-decoration: none;
 }
 
 #location a {
@@ -274,6 +279,7 @@ button:hover {
   width: 100%;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .passes img {
