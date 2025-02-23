@@ -8,6 +8,7 @@ body {
   font-family: "Roboto Condensed";
 }
 
+/* Headings */
 h2 {
   font-size: 36px;
   margin: 0 24px;
@@ -26,6 +27,7 @@ h4 {
   margin: 12px 0;
 }
 
+/* Text styling */
 .exhibition-titel {
   text-transform: uppercase;
   color: black;
@@ -43,18 +45,18 @@ p {
   color: black;
 }
 
+/* Links styling */
 a {
   text-decoration: none;
-  color: black;
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #7B3535 !important;
+  color: #7B3535;
+  font-weight: 500;
 }
 
 a:visited {
-  text-decoration: none;
+  color: inherit;
 }
 
 #location a {
@@ -65,7 +67,7 @@ a:visited {
   color: white;
 }
 
-
+/* Buttons */
 button {
   padding: 4px;
   margin: 4px;
@@ -83,7 +85,7 @@ button:hover {
   border: 2px solid #7B3535;
 }
 
-/* Styling for hero-container */
+/* Hero-container */
 .hero-container {
   position: relative;
   height: 100vh;
@@ -108,107 +110,6 @@ button:hover {
   align-items: center;
 }
 
-
-#ham-menu {
-  position: relative;
-  cursor: pointer;
-  width: 30px;
-  height: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-#ham-menu .bar {
-  transition: all 0.3s ease;
-}
-
-#ham-menu.expanded .bar:nth-child(1) {
-  transform: rotate(45deg);
-  position: relative;
-  top: 7px;
-}
-
-#ham-menu.expanded .bar:nth-child(2) {
-  opacity: 0;
-}
-
-#ham-menu.expanded .bar:nth-child(3) {
-  transform: rotate(-45deg);
-  position: relative;
-  top: -7px;
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOut {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-#nav-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.9);
-  align-items: center;
-  flex-direction: column;
-  padding: 3rem 0;
-
-}
-
-#nav-menu.active {
-  display: flex;
-  animation: slideIn 0.5s ease-out forwards;
-  transform: translateX(100%);
-}
-
-#nav-menu:not(.active) {
-  animation: slideOut 0.5s ease-out forwards;
-}
-
-.menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-.menu-item {
-  text-transform: uppercase;
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 0;
-}
-
-.menu-item:hover {
-  background: #7B3535;
-  color: white;
-}
-
 .hero-video {
   position: absolute;
   top: 0;
@@ -219,20 +120,106 @@ button:hover {
   z-index: -1;
 }
 
+/* Hamburger menu*/
+.ham-menu {
+  height: 30px;
+  width: 30px;
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.ham-menu span {
+  height: 3px;
+  width: 100%;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Nav menu on header*/
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 3rem;
+  transition: .5s ease;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.menu-item:hover {
+  background: #7B3535;
+  color: white;
+}
+
+/* Location and todays open hours in header*/
 .location-openHours {
   position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 1;
-  color: black;
   background: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 16px;
+  padding: 16px 24px;
 }
 
-/* styling for section with exhibitions */
+/* Exhibitions sections */
 .exhibition {
   position: relative;
   height: 500px;
@@ -261,8 +248,8 @@ button:hover {
   margin-right: 24px;
 }
 
-/* Styling for section with passes */
-.passes {
+/* Passes section */
+.passes-container {
   width: auto;
   margin: 60px 40px;
   display: flex;
@@ -273,8 +260,7 @@ button:hover {
   overflow: hidden;
 }
 
-.annual-pass,
-.tours-dropIn {
+.passes {
   position: relative;
   height: 300px;
   width: 100%;
@@ -283,13 +269,12 @@ button:hover {
   overflow: hidden;
 }
 
-.passes img {
+.passes-container img {
   position: absolute;
   z-index: -1;
   height: 100%;
   width: 100%;
   object-fit: cover;
-  overflow: hidden;
 }
 
 .passes-info {
@@ -303,7 +288,7 @@ button:hover {
 }
 
 
-/* Styling for the footer */
+/* Footer */
 footer {
   background: black;
   color: white;
@@ -312,32 +297,32 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
 }
 
-
-footer img {
-  max-width: 300px;
+.footer-nav {
+  display: flex;
+  justify-content: flex-start;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+.footer-nav ul {
   margin-top: 1rem;
+  text-align: left;
+  gap: 12px;
 }
 
-nav li {
-  color: white;
-  text-transform: uppercase;
+.footer-nav a {
+  font-size: 18px;
   font-weight: 500;
-  padding-bottom: 16px;
+  text-transform: none;
 }
 
-.find-us p {
-  margin: 16px 0;
+.footer-nav a:hover {
+  background: none;
+  color: #7B3535;
 }
 
-/* Styling for newsletter form */
+
+/* Newsletter form */
 footer form {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -349,28 +334,28 @@ footer form {
 .form-input {
   margin-bottom: 12px;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-input {
-  border: none;
-  color: white;
-}
 
 input[type=email] {
+  margin-top: 8px;
   height: 30px;
   width: auto;
+  padding-left: 8px;
 }
 
 input:focus {
   border: 2px solid #7B3535;
   background-color: #7B3535;
-  /* Ljus bakgrund när i fokus */
-  box-shadow: 0 0 12px rgba(128, 0, 128, 0.6);
+}
 
+.form-input label {
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .form-checkbox {
@@ -391,14 +376,13 @@ input:focus {
 #privacy-policy {
   color: white;
   text-decoration: underline;
-
 }
 
 form button {
   margin-top: 16px;
 }
 
-/* Styling for media queries */
+/* Media queries */
 @media (min-width: 670px) and (max-width: 1024px) {
 
   h2 {
@@ -409,40 +393,7 @@ form button {
     font-size: 32px;
   }
 
-  #ham-menu {
-    display: none;
-  }
-
-  #nav-menu {
-    display: flex;
-    position: relative;
-    width: auto;
-    height: auto;
-    background: none;
-    padding: 0;
-    transform: none;
-    animation: none;
-  }
-
-  #nav-menu:not(.active) {
-    animation: none;
-  }
-
-
-  .menu-list {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin: 0;
-  }
-
-  .menu-item {
-    font-size: 16px;
-    color: black;
-  }
-
-
-  .passes {
+  .passes-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -457,6 +408,7 @@ form button {
   }
 }
 
+
 @media (min-width: 1025px) {
 
   h2 {
@@ -467,27 +419,24 @@ form button {
     font-size: 32px;
   }
 
-  #ham-menu {
+  .ham-menu {
     display: none;
   }
 
-  #nav-menu {
-    display: flex;
+  .nav-menu {
     position: relative;
     width: auto;
     height: auto;
+    right: 0;
+    color: black;
     background: none;
     padding: 0;
   }
 
-  #nav-menu:not(.active) {
-    animation: none;
-  }
-
-  /* denna id tas bort */
   .menu-list {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1rem;
     margin: 0;
   }
@@ -497,7 +446,7 @@ form button {
     color: black;
   }
 
-  .passes {
+  .passes-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -511,10 +460,16 @@ form button {
     gap: 16px;
   }
 
+  .footer-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    gap: 16px;
+  }
+
   footer .nav-logo {
     align-self: center;
   }
-
 
   footer nav {
     grid-column: 1;
@@ -528,10 +483,6 @@ form button {
     grid-row: 3;
   }
 
-  nav ul {
-    margin-top: 0rem;
-  }
-
   .find-us {
     grid-column: 2;
     grid-row: 3;
@@ -541,5 +492,4 @@ form button {
     grid-column: 2;
     grid-row: 2;
   }
-
 }
